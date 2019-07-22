@@ -1,2 +1,3 @@
 # micropay
-Simple payment system
+Simple payment system for testing purposes.
+

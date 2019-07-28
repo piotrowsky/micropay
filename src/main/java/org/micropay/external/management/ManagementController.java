@@ -1,18 +1,14 @@
 package org.micropay.external.management;
 
-import io.micronaut.http.HttpResponse;
-import io.micronaut.http.annotation.*;
-import io.reactivex.Single;
+import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Get;
+import io.micronaut.http.annotation.Put;
 import org.micropay.domain.account.Account;
 import org.micropay.domain.account.AccountRepository;
 import org.micropay.domain.transfer.TransferRepository;
 
 import javax.inject.Inject;
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
-import java.text.ParseException;
 import java.util.Collection;
-import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller("/management")

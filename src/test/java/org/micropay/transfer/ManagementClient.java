@@ -1,10 +1,8 @@
 package org.micropay.transfer;
 
-import io.micronaut.http.HttpResponse;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Put;
 import io.micronaut.http.client.annotation.Client;
-import io.reactivex.Flowable;
 import io.reactivex.Single;
 import org.micropay.external.management.AccountCreationRequest;
 import org.micropay.external.management.AccountCreationResponse;

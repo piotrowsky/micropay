@@ -1,12 +1,8 @@
-package example.micropay.domain;
+package org.micropay.domain.transfer;
 
 public class TransferFailureException extends RuntimeException {
 
     TransferFailureException(Throwable cause) {
         super(cause);
-    }
-
-    public TransferFailureException(String message, Throwable cause) {
-        super(message, cause);
     }
 }

@@ -13,14 +13,14 @@ public class Account {
     private final String uniqueId = UUID.randomUUID().toString();
     private BigDecimal balance;
 
-    Account(BigDecimal initialBalance) {
+    public Account(BigDecimal initialBalance) {
         this.balance = initialBalance;
     }
 
     public void decreaseBalanceBy(BigDecimal amount) {
         if (balance.compareTo(amount) < 0) {
             throw new InsufficientBalanceException(
-                    format("Insufficient funds for account: %s. Requested amount: ", this, amount));
+                    format("Insufficient funds for account: %s. Requested amount: %s", this, amount));
         }
         this.balance = balance.subtract(amount);
     }

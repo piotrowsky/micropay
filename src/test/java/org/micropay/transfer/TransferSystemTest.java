@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.micropay.external.transfer.TransferResponse.SUCCESS;
 
 @MicronautTest
-class TransferTest {
+class TransferSystemTest {
 
     private static final int SOME_FIRST_BALANCE = 100;
     private static final int SOME_SECOND_BALANCE = 200;
@@ -29,7 +29,6 @@ class TransferTest {
     @Inject private ManagementClient managementClient;
 
     @Test
-    // I know testing coverage is bit poor. But it might give you at least some grasp, whats going on.
     void shouldExecuteTransferBetweenAccounts() {
         String firstAccountId = givenAccountWith(SOME_FIRST_BALANCE);
         String secondAccountId = givenAccountWith(SOME_SECOND_BALANCE);

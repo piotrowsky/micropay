@@ -6,8 +6,6 @@ import java.math.BigDecimal;
 
 class ThreadSafeTransfer implements Transfer {
 
-    private static final Object TIE_BREAKING_LOCK = new Object();
-
     private final Account sourceAccount;
     private final Account destinationAccount;
     private final Transfer businessTransfer;
@@ -37,13 +35,8 @@ class ThreadSafeTransfer implements Transfer {
                 }
             }
         } else {
-            synchronized (TIE_BREAKING_LOCK) {
-                synchronized (sourceAccount) {
-                    synchronized (destinationAccount) {
-                        businessTransfer.execute();
-                    }
-                }
-            }
+            // should never reach there
+            throw new TransferFailureException("Account ids are not unique.");
         }
     }
 
